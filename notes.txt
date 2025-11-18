@@ -1,0 +1,15 @@
+By default typesi n rust are immutable
+
+String is from Standard Library Growable
+
+io::stdin().read_line(&mut guess)
+
+:: denotes that an object is an associated fucntion, meaning it is implemented on a type
+
+you can write direct calls to modules by std::io::stdin <-- allows you skip imports
+
+references, denoted by &, allow you to pass the same shared spot to memory, references are by default immutable (duh think singleton principle) 
+
+read_line does not overwrite contents, too long i presume, but this will cause the String to grow to the size of the buffer (or overflow it blah) this is where clearing the buffer with .clear comes in handy
+
+.readlien returns a 'Result' value which is an enumeration
