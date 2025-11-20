@@ -33,8 +33,9 @@ fn guess(secret_number : u32){
         }; 
         match guess1.cmp(&secret_number){
         
-            Ordering::Less => {println!("WRONG!"); guess(secret_number);}, 
-            Ordering::Greater => {println!("WRONG!"); guess(secret_number);}, 
+            Ordering::Less => {println!("WRONG! \n Guess is too Low"); guess(secret_number);}, 
+            
+            Ordering::Greater => {println!("WRONG! \n Guess is too High"); guess(secret_number);}, 
             Ordering::Equal => println!("Hurray Huzz!"),
         }
 }
