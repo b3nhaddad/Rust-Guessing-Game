@@ -13,3 +13,5 @@ references, denoted by &, allow you to pass the same shared spot to memory, refe
 read_line does not overwrite contents, too long i presume, but this will cause the String to grow to the size of the buffer (or overflow it blah) this is where clearing the buffer with .clear comes in handy
 
 .readlien returns a 'Result' value which is an enumeration
+
+It is important to use the const types rather than always using let (just not allowing mutability). Yes it is clean code practice but no it technically doesn't free up space for you. HOWEVER, it is still important to do for compile time. Const will only have one purpose which can be picked up on easier than a let, due to the nature of let values being defined at runtime
