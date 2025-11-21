@@ -4,13 +4,13 @@ use std::cmp::Ordering;
 fn main() {
 	println!("Guessing game");
         
-        let minimum = 1;
-        let maximum = 10;
+        const MINIMUM: u32= 1;
+        const MAXIMUM: u32= 10;
 
-        let secret_num = rand::thread_rng().gen_range(minimum..=maximum);
+        let secret_num = rand::thread_rng().gen_range(MINIMUM..=MAXIMUM);
 
         
-        println!("Secret number is between range {minimum} to {maximum}"); 
+        println!("Secret number is between range {MINIMUM} to {MAXIMUM}"); 
 
         guess(secret_num);
 
@@ -33,8 +33,9 @@ fn guess(secret_number : u32){
         }; 
         match guess1.cmp(&secret_number){
         
-            Ordering::Less => {println!("WRONG!"); guess(secret_number);}, 
-            Ordering::Greater => {println!("WRONG!"); guess(secret_number);}, 
+            Ordering::Less => {println!("WRONG! \n Guess is too Low"); guess(secret_number);}, 
+            
+            Ordering::Greater => {println!("WRONG! \n Guess is too High"); guess(secret_number);}, 
             Ordering::Equal => println!("Hurray Huzz!"),
         }
 }
